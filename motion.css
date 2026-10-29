@@ -1,0 +1,38 @@
+/* FINOVA motion and finishing details. All effects have a static fallback. */
+.hero { isolation: isolate; }
+.hero::before {
+  z-index: -1;
+  mask-image: radial-gradient(ellipse, #000 25%, transparent 72%);
+  background: radial-gradient(ellipse at 32% 30%, #bb9cff24, transparent 58%),
+    radial-gradient(ellipse at 75% 55%, #c4f56714, transparent 55%);
+}
+.hero h1 em {
+  background: linear-gradient(105deg, #c4f567 15%, #e1ffb1 50%, #c4f567 85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.hero-preview { border-color: #bb9cff40; box-shadow: 0 32px 100px #0006, 0 0 60px #bb9cff0b; }
+.stat-card strong, .preview-card b { font-variant-numeric: tabular-nums; }
+.stat-card, .feature-card, .manage-card {
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+.bar-chart .bar, .preview-bars span, .budget-track > *, .feature-illustration i { transform-origin: center bottom; }
+.btn-primary { box-shadow: 0 4px 18px #c4f56714; }
+.btn:active, .icon-btn:active { transform: scale(.97); }
+.side-link { position: relative; }
+.side-link.active::before {
+  content: ''; position: absolute; left: 0; top: 28%; bottom: 28%;
+  width: 3px; border-radius: 4px; background: var(--purple);
+}
+@media (hover: hover) and (pointer: fine) {
+  .stat-card:hover, .feature-card:hover, .manage-card:hover {
+    border-color: #bb9cff70; box-shadow: 0 12px 30px #0002; transform: translateY(-3px);
+  }
+  .btn-primary:hover { box-shadow: 0 8px 26px #c4f56725; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .stat-card, .feature-card, .manage-card, .btn, .icon-btn { transition: none; }
+  .stat-card:hover, .feature-card:hover, .manage-card:hover, .btn:hover, .btn:active, .icon-btn:active { transform: none; }
+}
