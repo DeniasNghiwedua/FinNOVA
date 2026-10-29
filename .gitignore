@@ -1,0 +1,7 @@
+finova-private-data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.env
+node_modules/
+.DS_Store
