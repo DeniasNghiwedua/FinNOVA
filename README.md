@@ -13,7 +13,7 @@ A responsive website with a financial dashboard, transaction records, interactiv
 - HTML5, CSS3, and JavaScript.
 - Node.js with built-in HTTP, SQLite, and cryptography modules.
 - Browser localStorage for local workspaces.
-- OpenAI API for optional AI assistance, voice transcription, and semantic search.
+- Browser-based guided assistant for common finance tasks.
 - Git and GitHub for version control and project hosting.
 
 ## Installation and running
@@ -39,14 +39,7 @@ No npm package installation is required. For local-only use, open `index.html` d
 
 ## Additional setup requirements
 
-- Optional AI features require an OpenAI API key with available API credit. Set `OPENAI_API_KEY` in the server environment before starting the server. In PowerShell:
-
-  ```powershell
-  $env:OPENAI_API_KEY = 'your-api-key'
-  node server/index.mjs
-  ```
-
-- Enable the GPT agent in Nova and provide consent to use AI features. Voice input also requires microphone permission and localhost or HTTPS.
+- Nova runs locally in the browser and does not call an external AI service. For example, enter “I spent 200 on alcohol”; review the proposed N$200 expense in “Other Expenses” and confirm to save it to the current FINOVA workspace.
 - Account data is stored automatically in `finova-private-data/`. Set `FINOVA_DATA_DIR` to use another private directory.
 - For HTTPS hosting, set `FINOVA_HTTPS=true` and run the server behind an HTTPS reverse proxy.
 
@@ -56,6 +49,6 @@ No npm package installation is required. For local-only use, open `index.html` d
 - Transaction management with search, filtering, and CSV import/export.
 - Monthly budgets, savings goals, recurring payment reminders, and a financial calendar.
 - Analytics and insights based on recorded transactions.
-- Nova guided assistant with optional AI conversation, voice input, and semantic search.
+- Nova guided assistant for natural-language expense entries, budgets, savings goals, recurring reminders, and spending summaries.
 - Separate local workspaces and password-protected accounts with server storage.
 - Workspace backup and restore, appearance settings, and keyboard command navigation.
